@@ -1,12 +1,19 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-	char Message[6] = "Hello";
+	int Size = 10;
 
-	cout << Message[6] << endl;
+	string Message;
+
+	Message = "hello world!";
+	cout << Message << endl;
+
+	Message += "¹ÝÀåÀÌ ½ð´Ù.";
+	cout << Message << endl;
 
 	return 0;
 }
