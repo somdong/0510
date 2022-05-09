@@ -3,17 +3,30 @@
 
 using namespace std;
 
+void Swap(int* A, int* B)
+{
+	int Temp = *A;
+	*A = *B;
+	*B = Temp;
+}
 int main()
 {
-	int Size = 10;
+	int A = 10;
+	int B = 20;
 
-	string Message;
+	Swap(&A, &B);
 
-	Message = "hello world!";
-	cout << Message << endl;
+	cout << A << ',' << B << endl;
 
-	Message += "반장이 쏜다.";
-	cout << Message << endl;
+
+	// 동적 할당
+
+	int Count = 0;
+	cin >> Count;
+
+	int* Array = new int[Count];
+	
+	delete[] Array;
 
 	return 0;
 }
