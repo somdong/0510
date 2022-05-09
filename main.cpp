@@ -1,28 +1,52 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
 
+using namespace std;
 
 int main()
 {
-	int* PA = nullptr;
+	char Buffer[1024] = { 0, };
 
-	PA = new int;
+	cin >> Buffer;
+
+	// 문자열 길이 찾는 거
+	int Size = 0;
+
+	for (int i = 0; i < 1024; ++i)
+	{
+		if (Buffer[i] == '\0')
+		{
+			Size = i + 1;
+		}
+	}
+
+	char* Array = new char[Size];
+
+	for (int i = 0; i < Size; ++i)
+	{
+		Array[i] = Buffer[i];
+	}
+
+	cout << Array << endl;
 
 
-	*PA = 10;
 
-	int* PB = PA;
+	//for (int i = 0; i < Size; ++i)
+	//{
+	//	Array[i] = i + 1;
+	//}
 
-	delete(PB);
+	//for (int i = 0; i < Size; ++i)
+	//{
+	//	cout << Array[i] << ", ";
+	//}
 
-	PB = nullptr;
-	PA = nullptr;
+	delete[] Array;
 
-	cout << *PA << endl;
 
-	delete PA;
+
+
 
 	return 0;
 }
