@@ -3,30 +3,26 @@
 
 using namespace std;
 
-void Swap(int* A, int* B)
-{
-	int Temp = *A;
-	*A = *B;
-	*B = Temp;
-}
+
 int main()
 {
-	int A = 10;
-	int B = 20;
+	int* PA = nullptr;
 
-	Swap(&A, &B);
-
-	cout << A << ',' << B << endl;
+	PA = new int;
 
 
-	// 동적 할당
+	*PA = 10;
 
-	int Count = 0;
-	cin >> Count;
+	int* PB = PA;
 
-	int* Array = new int[Count];
-	
-	delete[] Array;
+	delete(PB);
+
+	PB = nullptr;
+	PA = nullptr;
+
+	cout << *PA << endl;
+
+	delete PA;
 
 	return 0;
 }
